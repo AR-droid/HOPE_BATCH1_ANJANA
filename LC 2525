@@ -1,0 +1,36 @@
+class Solution {
+    public String categorizeBox(int length, int width, int height, int mass) {
+        int Bulky=0;
+        int Heavy=0;
+        double volume = (double)length * width * height;
+    
+        if(length >= 10000 || width >= 10000 || height >= 10000 ||
+            volume >= 1000000000){
+            Bulky=1;
+           
+
+        }
+        if(mass>=100){
+            Heavy=1;
+
+        }
+        if(Bulky==1 && Heavy==1){
+            return "Both";
+        }
+        if(Bulky==0 && Heavy==0){
+            return "Neither";
+           
+
+        }
+        if(Bulky==1 && Heavy==0){
+            return "Bulky";
+        }
+        else{
+            return "Heavy";
+        }
+
+        
+       
+    }
+   
+}
